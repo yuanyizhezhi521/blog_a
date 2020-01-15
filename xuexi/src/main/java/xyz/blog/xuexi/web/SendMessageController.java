@@ -1,5 +1,4 @@
 package xyz.blog.xuexi.web;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +17,7 @@ import java.util.UUID;
 public class SendMessageController {
 
     @Autowired
-    RabbitTemplate rabbitTemplate;  //使用RabbitTemplate,这提供了接收/发送等等方法
+   // RabbitTemplate rabbitTemplate;  //使用RabbitTemplate,这提供了接收/发送等等方法
 
     @GetMapping("/sendDirectMessage")
     public String sendDirectMessage() {
@@ -30,7 +29,7 @@ public class SendMessageController {
         map.put("messageData",messageData);
         map.put("createTime",createTime);
         //将消息携带绑定键值：TestDirectRouting 发送到交换机TestDirectExchange
-        rabbitTemplate.convertAndSend("TestDirectExchange", "TestDirectRouting", map);
+        //rabbitTemplate.convertAndSend("TestDirectExchange", "TestDirectRouting", map);
         return "ok";
     }
 }

@@ -3,7 +3,6 @@ package xyz.blog.xuexi.aspect;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import xyz.blog.xuexi.pojo.ZjUsers;
 import xyz.blog.xuexi.util.MD5Utils;
 
 import javax.servlet.http.Cookie;
